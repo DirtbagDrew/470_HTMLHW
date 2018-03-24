@@ -2,7 +2,8 @@ body,
 	html {
 		margin:0;
 		padding:0;
-		background-image: url(images/tlm.png);
+		background-color: #9e7a42;
+		/*background-image: url(images/tlm.png);*/
 		background-size: 20%;
 		background-repeat: repeat;
 
@@ -72,8 +73,9 @@ body,
 }
 .textbox
 {
-	width:100%;
+	width:96%;
 	background-color:#3a2a0d;
+	padding: 2%;
 }
 .centercolumn p{
 	font-size: 1.5vw;
