@@ -128,3 +128,13 @@ body,
 		width:100%;
 		height:10%;
 	}
+	.checkbox-image{
+		width:100%;
+		height:10%;
+	}
+	.inventory-item{
+		width: 24%;
+		margin: .5%;
+		text-align: center;
+		float: left;
+	}
