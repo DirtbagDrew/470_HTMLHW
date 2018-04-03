@@ -12,7 +12,7 @@ function formQuantity()
 
   var s4=document.getElementById("select4");
   var select4 = s4.options[s4.selectedIndex].value;
-
+  document.open();
   document.write('<!DOCTYPE html>');
   document.write('<html lang="en">');
   document.write('<head>');
