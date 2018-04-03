@@ -1,3 +1,7 @@
+
+var subtotal=0;
+var total=0;
+
 function finalCheckout()
 {
   var s1cc=document.getElementsByClassName("select1Color");
@@ -9,41 +13,39 @@ function finalCheckout()
   var s4cc=document.getElementsByClassName("select4Color");
   s4c=s4cc;
 
-  document.open();
+  var newWindow = window.open();
 
   alert(s1c.length);
 
-  var subtotal=0;
-  var total=0;
-  document.write('<!DOCTYPE html>');
-  document.write('<html lang="en">');
-  document.write('<head>');
-  document.write('<meta charset="utf-8">');
-  document.write('<title>How The Turntables Furniture Store</title>');
-  document.write('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-  document.write('<link rel="stylesheet" href="style.css">');
-  document.write('<script src="order2.js"></script>');
-  document.write('</head>');
-  document.write('<body>');
-  document.write('<div class="header">');
-  document.write('<img src="images/banner.jpg" class="hp"  alt="collage of all the characters from the office">');
-  document.write('<div class="banner-title">');
-  document.write('<h1>How The Turntables Furniture Store</h1>');
-  document.write('</div>');
-  document.write('</div>');
-  document.write('<div id="nav">');
-  document.write('<ul>');
-  document.write('<li><a href="furniture.html">Home</a><li>');
-  document.write('<li><a href="contact.html">Contact Us</a><li>');
-  document.write('<li><a href="order.html">Order</a><li>');
-  document.write('</ul>');
-  document.write('</div>');
-  document.write('<div class="row">');
-  document.write('<div class="leftcolumn">');
-  document.write('<br>');
-  document.write('</div>');
-  document.write('<div class="centercolumn">');
-  document.write('<h1>Customize Order</h1>');
+  newWindow.document.write('<!DOCTYPE html>');
+  newWindow.document.write('<html lang="en">');
+  newWindow.document.write('<head>');
+  newWindow.document.write('<meta charset="utf-8">');
+  newWindow.document.write('<title>How The Turntables Furniture Store</title>');
+  newWindow.document.write('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+  newWindow.document.write('<link rel="stylesheet" href="style.css">');
+  newWindow.document.write('<script src="order2.js"></script>');
+  newWindow.document.write('</head>');
+  newWindow.document.write('<body>');
+  newWindow.document.write('<div class="header">');
+  newWindow.document.write('<img src="images/banner.jpg" class="hp"  alt="collage of all the characters from the office">');
+  newWindow.document.write('<div class="banner-title">');
+  newWindow.document.write('<h1>How The Turntables Furniture Store</h1>');
+  newWindow.document.write('</div>');
+  newWindow.document.write('</div>');
+  newWindow.document.write('<div id="nav">');
+  newWindow.document.write('<ul>');
+  newWindow.document.write('<li><a href="furniture.html">Home</a><li>');
+  newWindow.document.write('<li><a href="contact.html">Contact Us</a><li>');
+  newWindow.document.write('<li><a href="order.html">Order</a><li>');
+  newWindow.document.write('</ul>');
+  newWindow.document.write('</div>');
+  newWindow.document.write('<div class="row">');
+  newWindow.document.write('<div class="leftcolumn">');
+  newWindow.document.write('<br>');
+  newWindow.document.write('</div>');
+  newWindow.document.write('<div class="centercolumn">');
+  newWindow.document.write('<h2>Order Summary</h2>');
 
   if(s1c.length==0)
   {
@@ -53,9 +55,7 @@ function finalCheckout()
   {
     for(var i=0;i<s1c.length;i++)
     {
-      document.write('Round Stool: ');
-      document.write(s1c[i].value);
-      document.write(' $20<br>');
+      newWindow.document.write('<p>Round Stool: '+s1c[i].value+', $20</p>');
       subtotal=subtotal+20;
     }
   }
@@ -67,9 +67,7 @@ function finalCheckout()
   {
     for(var i=0;i<s2c.length;i++)
     {
-      document.write('Piano Table: ');
-      document.write(s2c[i].value);
-      document.write(' $30<br>');
+      newWindow.document.write('<p>Piano Table: '+s2c[i].value+', $30</p>');
       subtotal=subtotal+30;
     }
   }
@@ -81,9 +79,7 @@ function finalCheckout()
   {
     for(var i=0;i<s3c.length;i++)
     {
-      document.write('Bench Table: ');
-      document.write(s3c[i].value);
-      document.write(' $40<br>');
+      newWindow.document.write('<p>Bench Table: '+s3c[i].value+' $40</p>');
       subtotal=subtotal+40;
     }
   }
@@ -95,46 +91,55 @@ function finalCheckout()
   {
     for(var i=0;i<s4c.length;i++)
     {
-      document.write('Stool Table: ');
-      document.write(s4c[i].value);
-      document.write(' $10<br>');
+      newWindow.document.write('<p>Stool Table: '+s4c[i].value+', $10</p>');
       subtotal=subtotal+10;
     }
   }
-document.write('subtotal: $'+subtotal +'<br>');
-document.write('shipping options')
+newWindow.document.write('<p>subtotal: $'+subtotal +'</p>');
+newWindow.document.write('<p>shipping options (shipping is $10 in 92647 area code, $50 outside of 92647 area code. Pickup is free)</p>')
 
-document.write('<select name="travel_arriveVia" id="travel_arriveVia" onchange="showfield(this.options[this.selectedIndex].value,'+subtotal+')">');
-document.write('<option selected="selected">Please select ...</option>');
-document.write('<option value="Standard">Standard</option>');
-document.write('<option value="Pickup">Pickup</option>');
-document.write('</select>');
-document.write('<div id="div1"></div>');
+newWindow.document.write('<select name="travel_arriveVia" id="travel_arriveVia" onchange="showfield(this.options[this.selectedIndex].value,'+subtotal+')">');
+//newWindow.document.write('<option selected="selected">Please select ...</option>');
+newWindow.document.write('<option selected="selected" value="Standard1">Standard in 92647</option>');
+newWindow.document.write('<option value="Standard2">Standard outside 92647</option>');
+newWindow.document.write('<option value="Pickup">Pickup</option>');
+newWindow.document.write('</select>');
+newWindow.document.write('<div id="div1"></div>');
+newWindow.document.write('<div id="div2"></div>');
 
-  document.write('</div>');
-  document.write('<div class="rightcolumn">');
-  document.write('<br>');
-  document.write('</div>');
-  document.write('</div>');
-  document.write('<div id="footer">');
-  document.write('Latest Update: <!--#echo var="LAST_MODIFIED"-->');
-  document.write('<br>');
-  document.write('<a href=mailto:andrew.myer@student.csulb.edu >andrew.myer@student.csulb.edu</a>');
-  document.write('</div>');
-  document.write('</body>');
-  document.write('</html>');
+  newWindow.document.write('</div>');
+  newWindow.document.write('<div class="rightcolumn">');
+  newWindow.document.write('<br>');
+  newWindow.document.write('</div>');
+  newWindow.document.write('</div>');
+  newWindow.document.write('<div id="footer">');
+  newWindow.document.write('Latest Update: <!--#echo var="LAST_MODIFIED"-->');
+  newWindow.document.write('<br>');
+  newWindow.document.write('<a href=mailto:andrew.myer@student.csulb.edu >andrew.myer@student.csulb.edu</a>');
+  newWindow.document.write('</div>');
+  newWindow.document.write('</body>');
+  newWindow.document.write('</html>');
 }
 
-function showfield(name, subtotal)
+function showfield(name,subtotal)
 {
-  if(name=='Standard')
+  if(name=='Standard1')
   {
-    document.getElementById('div1').innerHTML='Shipping Address: <input type="text" name="other" />';
+    document.getElementById('div1').innerHTML='<p>Shipping Address: </p><input type="text" name="other" />';
+    total=subtotal+20;
+    document.getElementById('div2').innerHTML='<p>Total: $'+total+'</p>';
+
+  }
+  else if (name=='Standard2') 
+  {
+    document.getElementById('div1').innerHTML='<p>Shipping Address: </p><input type="text" name="other" />';
     total=subtotal+50;
+    document.getElementById('div2').innerHTML='<p>Total: $'+total+'</p>';
   }
   else
   {
     document.getElementById('div1').innerHTML='';
     total=subtotal;
+    document.getElementById('div2').innerHTML='<p>Total: $'+total+'</p>';
   }
 }
