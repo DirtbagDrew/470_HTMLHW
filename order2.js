@@ -12,7 +12,7 @@ function finalCheckout()
   s3c=s3cc;
   var s4cc=document.getElementsByClassName("select4Color");
   s4c=s4cc;
-
+  window.close();
   var newWindow = window.open();
 
   alert(s1c.length);
@@ -97,7 +97,7 @@ function finalCheckout()
   }
 newWindow.document.write('<p>subtotal: $'+subtotal +'</p>');
 newWindow.document.write('<p>shipping options (shipping is $10 in 92647 area code, $50 outside of 92647 area code. Pickup is free)</p>')
-
+newWindow.document.write('<form>');
 newWindow.document.write('<select name="travel_arriveVia" id="travel_arriveVia" onchange="showfield(this.options[this.selectedIndex].value,'+subtotal+')">');
 //newWindow.document.write('<option selected="selected">Please select ...</option>');
 newWindow.document.write('<option selected="selected" value="Standard1">Standard in 92647</option>');
@@ -106,7 +106,9 @@ newWindow.document.write('<option value="Pickup">Pickup</option>');
 newWindow.document.write('</select>');
 newWindow.document.write('<div id="div1"></div>');
 newWindow.document.write('<div id="div2"></div>');
-
+newWindow.document.write("<p>We won't use your address for anything but shipping</p>");
+newWindow.document.write('<button class="submitButton">Confirm Order</button>');
+newWindow.document.write('</form>');
   newWindow.document.write('</div>');
   newWindow.document.write('<div class="rightcolumn">');
   newWindow.document.write('<br>');
@@ -130,7 +132,7 @@ function showfield(name,subtotal)
     document.getElementById('div2').innerHTML='<p>Total: $'+total+'</p>';
 
   }
-  else if (name=='Standard2') 
+  else if (name=='Standard2')
   {
     document.getElementById('div1').innerHTML='<p>Shipping Address: </p><input type="text" name="other" />';
     total=subtotal+50;

@@ -57,6 +57,7 @@ function formQuantity()
       }
       else
       {
+        document.write('<div class="row">');
         for(var i=0;i<select1;i++)
         {
           var j=i+1;
@@ -72,6 +73,7 @@ function formQuantity()
           document.write('</select>');
           document.write('</div>');
         }
+        document.write('</div>');
       }
 
       if(select2==0)
@@ -80,6 +82,7 @@ function formQuantity()
       }
       else
       {
+        document.write('<div class="row">');
         for(var i=0;i<select2;i++)
         {
           var j=i+1;
@@ -95,6 +98,7 @@ function formQuantity()
           document.write('</select>');
           document.write('</div>');
         }
+        document.write('</div>');
       }
 
       if(select3==0)
@@ -103,6 +107,7 @@ function formQuantity()
       }
       else
       {
+        document.write('<div class="row">');
         for(var i=0;i<select3;i++)
         {
           var j=i+1;
@@ -118,6 +123,7 @@ function formQuantity()
           document.write('</select>');
           document.write('</div>');
         }
+        document.write('</div>');
       }
 
       if(select4==0)
@@ -126,6 +132,7 @@ function formQuantity()
       }
       else
       {
+        document.write('<div class="row">');
         for(var i=0;i<select4;i++)
         {
           var j=i+1;
@@ -141,8 +148,9 @@ function formQuantity()
           document.write('</select>');
           document.write('</div>');
         }
+        document.write('</div>');
       }
-      document.write('<br><button type="submit" name="submit">submit</button>');
+      document.write('<br><button class="submitButton" type="submit" name="submit">submit</button>');
       document.write('</form>');
       document.write('</div>');
       document.write('<div class="rightcolumn">');
